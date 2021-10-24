@@ -1,0 +1,23 @@
+.card {
+  position: relative;
+  padding: 10px;
+  background-color: #d9f5ea;
+  border: 2px solid #d9f5ea;
+  border-radius: 10px;
+
+  h2 {
+    margin: 0 28px 10px;
+    text-transform: capitalize;
+  }
+
+  p {
+    margin: 0 0 10px;
+  }
+
+  img {
+    margin: 0 0 10px;
+    max-width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+}
