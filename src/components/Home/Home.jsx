@@ -10,7 +10,8 @@ const Home = () => {
       <img className={classes.image} src={Image} alt=""/>
       <nav className={classes.nav}>
         <Link to={"/villagers"} className={classes.link}>Villagers</Link>
-        <Link to={"/fishes"} className={classes.link}>Fishes</Link>
+        <Link to={"/fish"} className={classes.link}>Fishes</Link>
+        <Link to={"/bugs"} className={classes.link}>Bugs</Link>
       </nav>
     </div>
   );

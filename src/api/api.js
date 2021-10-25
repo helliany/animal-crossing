@@ -1,21 +1,21 @@
 import * as axios from "axios";
+import { camelizeKeys, decamelizeKeys } from 'humps';
 
 const instance = axios.create({
-  baseURL: 'https://acnhapi.com/v1a/',
+  baseURL: 'https://acnhapi.com/v1a',
+  transformResponse: [
+    ...axios.defaults.transformResponse,
+    (data) => camelizeKeys(data),
+  ],
+  transformRequest: [
+    (data) => decamelizeKeys(data),
+    ...axios.defaults.transformRequest,
+  ],
 });
 
 export const villagersAPI = {
   getVillagers() {
-    return instance.get('villagers')
-      .then(response => {
-        return response.data;
-      })
-      .catch((error) => {
-        console.warn(error);
-      });
-  },
-  getVillager(id) {
-    return instance.get(`villagers/${id}`)
+    return instance.get('/villagers')
       .then(response => {
         return response.data;
       })
@@ -27,16 +27,31 @@ export const villagersAPI = {
 
 export const fishAPI = {
   getFishes() {
-    return instance.get('fish')
+    return instance.get('/fish')
       .then(response => {
         return response.data;
       })
       .catch((error) => {
         console.warn(error);
       });
-  },
-  getFish(id) {
-    return instance.get(`fish/${id}`)
+  }
+}
+
+export const bugsAPI = {
+  getBugs() {
+    return instance.get('/bugs')
+      .then(response => {
+        return response.data;
+      })
+      .catch((error) => {
+        console.warn(error);
+      });
+  }
+}
+
+export const itemAPI = {
+  getItem(url) {
+    return instance.get(`${url}`)
       .then(response => {
         return response.data;
       })

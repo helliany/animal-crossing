@@ -1,16 +1,21 @@
 import React from 'react';
 import Card from "../../common/Card/Card";
 import Icon from "../../common/Icon/Icon";
+import {Link} from "react-router-dom";
 
-const VillagersCard = ({data: {name, species, image_uri, icon_uri, saying}}) => {
+const VillagersCard = ({data: {id, name, species, imageUri, iconUri, saying}}) => {
   return (
     <Card>
-      <h2>{name['name-USen']}</h2>
+      <h2>{name.nameUSen}</h2>
       <Icon>
-        <img src={icon_uri} alt={name['name-USen']}/>
+        <img src={iconUri} alt=""/>
       </Icon>
       <p>{species}</p>
-      <img src={image_uri} alt={name['name-USen']}/>
+      <p>
+        <Link to={`/villagers/${id}`}>
+          <img src={imageUri} alt={name.nameUSen}/>
+        </Link>
+      </p>
       <p>{saying}</p>
     </Card>
   );
