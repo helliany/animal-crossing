@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import {getVillagers} from "../../../redux/villagers-reducer";
+import {getVillagers} from "../../../redux/villagersReducer";
 import {useDispatch, useSelector} from "react-redux";
 import VillagersCard from "../VillagersCard/VillagersCard";
 import classes from "./Villagers.module.scss";

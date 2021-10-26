@@ -1,9 +1,9 @@
 import {applyMiddleware, combineReducers, compose, createStore} from "redux";
 import thunkMiddleware from "redux-thunk";
-import villagersReducer from "./villagers-reducer";
-import fishReducer from "./fish-reducer";
-import bugsReducer from "./bugs-reducer";
-import itemReducer from "./item-reducer";
+import villagersReducer from "./villagersReducer";
+import fishReducer from "./fishReducer";
+import bugsReducer from "./bugsReducer";
+import itemReducer from "./itemReducer";
 
 let reducers = combineReducers({
     villagers: villagersReducer,

@@ -2,7 +2,7 @@ import React, {useCallback, useEffect, useState} from 'react';
 import classes from "./Fishes.module.scss";
 import FishCard from "../FishCard/FishCard";
 import {useDispatch, useSelector} from "react-redux";
-import {getFishes} from "../../../redux/fish-reducer";
+import {getFishes} from "../../../redux/fishReducer";
 import SearchField from "../../common/SearchField/SearchField";
 import Loader from "../../common/Loader/Loader";
 import Error from "../../common/Error/Error";

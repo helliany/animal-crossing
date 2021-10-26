@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {getItem} from "../../../redux/item-reducer";
+import {getItem} from "../../../redux/itemReducer";
 import Icon from "../../common/Icon/Icon";
 import classes from "./Details.module.scss";
 import Card from "../../common/Card/Card";

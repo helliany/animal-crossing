@@ -1,6 +1,6 @@
 import Villagers from "./components/VillagersPage/Villagers/Villagers";
 import {Provider} from "react-redux";
-import store from "./redux/redux-store";
+import store from "./redux/reduxStore";
 import Container from "./components/common/Container/Container";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Header from "./components/Header/Header";

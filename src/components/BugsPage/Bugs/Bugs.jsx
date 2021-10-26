@@ -2,7 +2,7 @@ import React, {useCallback, useEffect, useState} from 'react';
 import classes from "./Bugs.module.scss";
 import BugCard from "../BugCard/BugCard";
 import {useDispatch, useSelector} from "react-redux";
-import {getBugs} from "../../../redux/bugs-reducer";
+import {getBugs} from "../../../redux/bugsReducer";
 import SearchField from "../../common/SearchField/SearchField";
 import Loader from "../../common/Loader/Loader";
 import Error from "../../common/Error/Error";
