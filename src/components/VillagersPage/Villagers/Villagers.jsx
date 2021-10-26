@@ -13,7 +13,8 @@ const Villagers = () => {
   const villagers = useSelector(state => state.villagers.villagers);
   const [villagersData, setVillagersData] = useState(villagers);
   const [filterValueName, setFilterValueName] = useState('');
-  const [filterValueSpecies, setFilterValueSpecies] = useState('');
+  const [filterValueSpecies, setFilterValueSpecies] = useState(0);
+  const [filterOptions, setFilterOptions] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
@@ -36,6 +37,7 @@ const Villagers = () => {
 
   useEffect(() => {
     setVillagersData(villagers.slice(0, 10));
+    setFilterOptions(() => Array.from(new Set(villagers.map((item) => item.species))));
   }, [villagers]);
 
 
@@ -63,7 +65,7 @@ const Villagers = () => {
         return item.name.nameUSen.toLowerCase().includes(value.toLowerCase());
       })
       setFilterValueName(value);
-      setFilterValueSpecies('');
+      setFilterValueSpecies(0);
     }
 
     if (e.target.name === 'villagersSpecies') {
@@ -83,19 +85,27 @@ const Villagers = () => {
         <>
           <div className={classes.fieldsWrapper}>
             <SearchField name="Villagers" inputName="villagersName" handleFilter={handleFilter} filterValue={filterValueName} />
-            <SearchField name="Species" inputName="villagersSpecies" handleFilter={handleFilter} filterValue={filterValueSpecies} />
+            <label className={classes.searchField}>
+              <span>Search Species</span>
+              <select className={classes.searchInput} name="villagersSpecies" onChange={handleFilter} value={filterValueSpecies}>
+                <option value="0" disabled>-- Select Species --</option>
+                {filterOptions.map((item) => (
+                  <option key={item} value={item}>{item}</option>
+                ))}
+              </select>
+            </label>
           </div>
           <div className={classes.cardsWrapper}>
             {villagersData.map((item) => (
               <VillagersCard key={item.id} data={item} />
             ))}
           </div>
-          {filterValueName === '' && filterValueSpecies === '' && villagers.length !== 0 && villagersData.length !== villagers.length && (
+          {filterValueName === '' && filterValueSpecies === 0 && villagers.length !== 0 && villagersData.length !== villagers.length && (
             <div className={classes.buttonWrapper}>
               <button className={classes.button} onClick={appendItems}>Show More</button>
             </div>
           )}
-          {(filterValueName !== '' || filterValueSpecies !== '') && villagersData.length === 0 && (
+          {(filterValueName !== '' || filterValueSpecies !== 0) && villagersData.length === 0 && (
             <div className={classes.searchNotFound}>
               <h2>Nothing Found:(</h2>
               <img src={SearchImage} alt=""/>

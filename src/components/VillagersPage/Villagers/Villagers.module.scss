@@ -50,3 +50,35 @@
   width: 100%;
   margin: 0 auto;
 }
+
+.searchField {
+  display: block;
+  text-transform: capitalize;
+  margin-bottom: 30px;
+  color: #112f26;
+  font-weight: 700;
+  font-size: 24px;
+
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.searchInput {
+  width: 100%;
+  min-width: 240px;
+  padding: 5px 10px;
+  font-size: 18px;
+  background-color: #e4f4ed;
+  border: 2px solid #112f26;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+
+  @media (min-width: 768px) {
+    width: auto;
+    margin-left: 10px;
+  }
+}
+
