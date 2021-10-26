@@ -19,9 +19,6 @@ export const villagersAPI = {
       .then(response => {
         return response.data;
       })
-      .catch((error) => {
-        console.warn(error);
-      });
   }
 }
 
@@ -31,9 +28,6 @@ export const fishAPI = {
       .then(response => {
         return response.data;
       })
-      .catch((error) => {
-        console.warn(error);
-      });
   }
 }
 
@@ -43,9 +37,6 @@ export const bugsAPI = {
       .then(response => {
         return response.data;
       })
-      .catch((error) => {
-        console.warn(error);
-      });
   }
 }
 
@@ -55,8 +46,5 @@ export const itemAPI = {
       .then(response => {
         return response.data;
       })
-      .catch((error) => {
-        console.warn(error);
-      });
   }
 }

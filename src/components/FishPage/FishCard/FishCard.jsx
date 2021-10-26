@@ -18,7 +18,7 @@ const FishCard = ({data: {id, name, price, imageUri, iconUri, availability, catc
         {price}
         <img src={BellsImage} alt=""/>
       </div>
-      <p>
+      <p className={classes.imageWrapper}>
         <Link to={`/fish/${id}`}>
           <img src={imageUri} alt={name.nameUSen}/>
         </Link>

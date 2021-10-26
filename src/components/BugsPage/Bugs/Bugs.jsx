@@ -1,18 +1,36 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import classes from "../../VillagersPage/Villagers/Villagers.module.scss";
+import classes from "./Bugs.module.scss";
 import BugCard from "../BugCard/BugCard";
 import {useDispatch, useSelector} from "react-redux";
 import {getBugs} from "../../../redux/bugs-reducer";
 import SearchField from "../../common/SearchField/SearchField";
+import Loader from "../../common/Loader/Loader";
+import Error from "../../common/Error/Error";
+import SearchImage from "../../../assets/images/search.png";
 
 const Bugs = () => {
   const dispatch = useDispatch();
   const bugs = useSelector(state => state.bugs.bugs);
   const [bugsData, setBugsData] = useState(bugs);
   const [filterValue, setFilterValue] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   useEffect(() => {
-    dispatch(getBugs());
+    const fetchData = async () => {
+      try {
+        setIsLoading(true);
+        await dispatch(getBugs());
+        setIsLoading(false);
+        setIsError(false);
+      } catch(err) {
+        console.log(err);
+        setIsLoading(false);
+        setIsError(true);
+      }
+    };
+
+    fetchData();
   }, [dispatch]);
 
   useEffect(() => {
@@ -20,7 +38,6 @@ const Bugs = () => {
   }, [bugs]);
 
 
-  // функция "доклеивающая" элементы массива
   const appendItems = useCallback(() => {
     setBugsData([
       ...bugsData,
@@ -46,13 +63,29 @@ const Bugs = () => {
 
   return (
     <div className={classes.wrapper}>
-      <SearchField name="bugs" handleFilter={handleFilter} filterValue={filterValue} />
-      <div className={classes.cardsWrapper}>
-        {bugsData.map((item) => (
-          <BugCard key={item.id} data={item} />
-        ))}
-      </div>
-      <button className={classes.button} onClick={appendItems}>Show More</button>
+      {isError && !isLoading && <Error />}
+      {isLoading && !isError && <Loader />}
+      {!isLoading && !isError && (
+        <>
+          <SearchField name="bugs" inputName="bugsName" handleFilter={handleFilter} filterValue={filterValue} />
+          <div className={classes.cardsWrapper}>
+          {bugsData.map((item) => (
+            <BugCard key={item.id} data={item} />
+          ))}
+          </div>
+          {filterValue === '' && bugs.length !== 0 && bugsData.length !== bugs.length && (
+            <div className={classes.buttonWrapper}>
+              <button className={classes.button} onClick={appendItems}>Show More</button>
+            </div>
+          )}
+          {filterValue !== '' && bugsData.length === 0 && (
+            <div className={classes.searchNotFound}>
+              <h2>Nothing Found:(</h2>
+              <img src={SearchImage} alt=""/>
+            </div>
+          )}
+        </>
+      )}
     </div>
   );
 };

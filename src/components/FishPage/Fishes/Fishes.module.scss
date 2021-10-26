@@ -34,19 +34,3 @@
     opacity: .8;
   }
 }
-
-.fieldsWrapper {
-  @media (min-width: 1024px) {
-    display: flex;
-    max-width: 900px;
-    width: 100%;
-    margin: 0 auto;
-    justify-content: space-between;
-  }
-}
-
-.searchNotFound {
-  max-width: 1000px;
-  width: 100%;
-  margin: 0 auto;
-}

@@ -1,0 +1,20 @@
+.buttonBackWrapper {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.buttonBack {
+  padding: 10px 20px;
+  background-color: #d9f5ea;
+  color: #282c34;
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .2s all ease-in-out;
+
+  &:hover, &:focus {
+    background-color: #ccecdd;
+  }
+}

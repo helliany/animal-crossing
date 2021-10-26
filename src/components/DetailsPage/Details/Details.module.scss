@@ -1,4 +1,8 @@
 .wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100%;
   max-width: 1000px;
   margin: 0 auto;
   font-size: 18px;
@@ -25,23 +29,6 @@
   }
 }
 
-.buttonBackWrapper {
-  margin-bottom: 20px;
-  text-align: left;
-}
-
-.buttonBack {
-  padding: 10px 20px;
-  background-color: #d9f5ea;
-  color: #282c34;
-  font-size: 20px;
-  font-weight: 700;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: .2s all ease-in-out;
-
-  &:hover, &:focus {
-    background-color: #ccecdd;
-  }
+.imageWrapper {
+  min-height: 200px;
 }

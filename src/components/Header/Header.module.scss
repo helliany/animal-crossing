@@ -1,4 +1,7 @@
 .header {
+  position: sticky;
+  z-index: 2;
+  top: 0;
   min-width: 320px;
   padding: 20px;
   box-sizing: border-box;

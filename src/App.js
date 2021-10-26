@@ -8,6 +8,7 @@ import Home from "./components/Home/Home";
 import Fishes from "./components/FishPage/Fishes/Fishes";
 import Bugs from "./components/BugsPage/Bugs/Bugs";
 import Details from "./components/DetailsPage/Details/Details";
+import Error from "./components/common/Error/Error";
 
 function App() {
   return (
@@ -15,24 +16,17 @@ function App() {
       <Provider store={store}>
         <Header />
         <Container>
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/villagers">
-            <Villagers />
-          </Route>
-          <Route exact path="/fish">
-            <Fishes />
-          </Route>
-          <Route exact path="/bugs">
-            <Bugs />
-          </Route>
-          <Route
-            path={["/fish/:id", "/villagers/:id", "/bugs/:id"]}
-            render={({match}) => <Details data={match} />}
-          />
-            </Switch>
+          <Switch>
+            <Route exact path="/"><Home /></Route>
+            <Route exact path="/villagers"><Villagers /></Route>
+            <Route exact path="/fish"><Fishes /></Route>
+            <Route exact path="/bugs"><Bugs /></Route>
+            <Route
+              path={["/fish/:id", "/villagers/:id", "/bugs/:id"]}
+              render={({match}) => <Details data={match} />}
+            />
+            <Route path="*"><Error /></Route>
+          </Switch>
         </Container>
       </Provider>
     </Router>

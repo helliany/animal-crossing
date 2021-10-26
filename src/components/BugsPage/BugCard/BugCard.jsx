@@ -16,7 +16,7 @@ const BugCard = ({data: {id, name, price, imageUri, iconUri, availability, catch
         {price}
         <img src={BellsImage} alt=""/>
       </div>
-      <p>
+      <p className={classes.imageWrapper}>
         <Link to={`/bugs/${id}`}>
           <img src={imageUri} alt={name.nameUSen}/>
         </Link>
