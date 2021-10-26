@@ -12,7 +12,7 @@ import Error from "./components/common/Error/Error";
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Provider store={store}>
         <Header />
         <Container>
