@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/animal-crossing/static/css/main.de6b197f.chunk.css",
-    "main.js": "/animal-crossing/static/js/main.00c3e35c.chunk.js",
-    "main.js.map": "/animal-crossing/static/js/main.00c3e35c.chunk.js.map",
+    "main.css": "/animal-crossing/static/css/main.d8f179c8.chunk.css",
+    "main.js": "/animal-crossing/static/js/main.18461fef.chunk.js",
+    "main.js.map": "/animal-crossing/static/js/main.18461fef.chunk.js.map",
     "runtime-main.js": "/animal-crossing/static/js/runtime-main.1a8f7eaf.js",
     "runtime-main.js.map": "/animal-crossing/static/js/runtime-main.1a8f7eaf.js.map",
     "static/js/2.c23c8ebd.chunk.js": "/animal-crossing/static/js/2.c23c8ebd.chunk.js",
     "static/js/2.c23c8ebd.chunk.js.map": "/animal-crossing/static/js/2.c23c8ebd.chunk.js.map",
     "index.html": "/animal-crossing/index.html",
-    "static/css/main.de6b197f.chunk.css.map": "/animal-crossing/static/css/main.de6b197f.chunk.css.map",
+    "static/css/main.d8f179c8.chunk.css.map": "/animal-crossing/static/css/main.d8f179c8.chunk.css.map",
     "static/js/2.c23c8ebd.chunk.js.LICENSE.txt": "/animal-crossing/static/js/2.c23c8ebd.chunk.js.LICENSE.txt",
     "static/media/Container.module.scss": "/animal-crossing/static/media/bg.0c3da441.jpg",
     "static/media/home.5b7965de.png": "/animal-crossing/static/media/home.5b7965de.png",
@@ -21,7 +21,7 @@
   "entrypoints": [
     "static/js/runtime-main.1a8f7eaf.js",
     "static/js/2.c23c8ebd.chunk.js",
-    "static/css/main.de6b197f.chunk.css",
-    "static/js/main.00c3e35c.chunk.js"
+    "static/css/main.d8f179c8.chunk.css",
+    "static/js/main.18461fef.chunk.js"
   ]
 }
