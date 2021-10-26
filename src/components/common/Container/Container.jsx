@@ -4,7 +4,9 @@ import classes from "./Container.module.scss";
 const Container = (props) => {
   return (
     <div className={classes.container}>
-      {props.children}
+      <div className={classes.wrapper}>
+        {props.children}
+      </div>
     </div>
   );
 };
