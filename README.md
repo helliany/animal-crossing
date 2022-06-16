@@ -1,8 +1,8 @@
 # Animal Crossing App
 [App link](https://helliany.github.io/animal-crossing)
 
-Responsive SPA with Animal Crossing: New Horizons API for critters and villagers. 
-The project uses the API: [https://docs.thecatapi.com/](https://acnhapi.com/v1a/)
+Responsive SPA with Animal Crossing: New Horizons API for critters and villagers.
+The project uses the API: [https://acnhapi.com/v1a/](https://acnhapi.com/v1a/)
 
 ## Technologies:
 + React
